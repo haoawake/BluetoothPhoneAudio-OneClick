@@ -11,7 +11,7 @@
 
 ### 使用
 
-1. 在「设置 → 蓝牙和设备」里先把手机与电脑配寻。
+1. 在「设置 → 蓝牙和设备」里先把手机与电脑配对。
 2. 双击 `windows/Start.cmd`。
 3. 第一次运行会自动从 `Dearkoma/AudioPlaybackConnector` 的 GitHub Release 下载与系统匹配的组件。
 4. 下载后根据 GitHub Release 提供的 SHA-256 digest 自动校验，校验通过才启动。
