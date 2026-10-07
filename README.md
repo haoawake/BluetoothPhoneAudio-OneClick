@@ -1,6 +1,6 @@
-# BluetoothPhoneAudio-OneClick
+# AudioBridge
 
-Cross-platform helper for playing phone audio through a computer.
+AudioBridge is a cross-platform helper for playing phone audio through a computer.
 
 - Windows 10 2004+ / Windows 11: Bluetooth A2DP Sink via the Windows `AudioPlaybackConnection` stack.
 - macOS 12+: Apple AirPlay Receiver for audio from iPhone/iPad/other AirPlay senders.
