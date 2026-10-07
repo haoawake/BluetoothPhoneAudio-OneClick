@@ -1,4 +1,4 @@
-# BluetoothPhoneAudio-OneClick
+# AudioBridge — 手机音频桥
 
 把手机声音送到电脑播放的跨平台一键工具。
 
@@ -44,7 +44,7 @@ Mac 端不安装第三方音频驱动，直接调用系统 AirPlay Receiver。
 
 ### 使用
 
-1. 双击 Release 里的 `BluetoothPhoneAudio-OneClick.app`。
+1. 双击 Release 里的 `AudioBridge.app`。
 2. 点「打开 AirPlay 设置」。
 3. 在 Mac 系统设置中打开 **AirPlay Receiver**。
 4. 在 iPhone / iPad 上播放声音，打开控制中心。
@@ -71,8 +71,8 @@ Windows 启动器只从：
 
 打 `v*` tag 后，GitHub Actions 会生成：
 
-- `BluetoothPhoneAudio-OneClick-win.zip`
-- `BluetoothPhoneAudio-OneClick-mac-universal.zip`
+- `AudioBridge-win.zip`
+- `AudioBridge-mac-universal.zip`
 - `SHA256SUMS.txt`
 
 ## License
