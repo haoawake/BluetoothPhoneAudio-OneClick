@@ -1,6 +1,6 @@
 on run
     set msg to "Mac 端使用 Apple 原生 AirPlay Receiver 接收 iPhone / iPad 的声音。\n\n注意：macOS 没有向普通应用公开与 Windows AudioPlaybackConnection 等价的 Bluetooth A2DP Sink 接口，所以这里不会假装成蓝牙音箱。"
-    display dialog msg with title "BluetoothPhoneAudio-OneClick" buttons {"取消", "打开 AirPlay 设置"} default button "打开 AirPlay 设置" with icon note
+    display dialog msg with title "AudioBridge" buttons {"取消", "打开 AirPlay 设置"} default button "打开 AirPlay 设置" with icon note
     if button returned of result is "打开 AirPlay 设置" then
         my openAirPlaySettings()
         delay 0.8
