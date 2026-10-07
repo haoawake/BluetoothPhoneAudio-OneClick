@@ -1,4 +1,4 @@
-name: Release cross-platform packages
+name: Release AudioBridge
 
 on:
   push:
@@ -17,18 +17,18 @@ jobs:
       - name: Build Windows package
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force dist/win/BluetoothPhoneAudio-OneClick | Out-Null
-          Copy-Item windows/* dist/win/BluetoothPhoneAudio-OneClick -Recurse
-          Copy-Item README.zh-CN.md dist/win/BluetoothPhoneAudio-OneClick/README.md
-          Copy-Item THIRD_PARTY_NOTICES.md dist/win/BluetoothPhoneAudio-OneClick/
-          Compress-Archive -Path dist/win/BluetoothPhoneAudio-OneClick -DestinationPath dist/BluetoothPhoneAudio-OneClick-win.zip -CompressionLevel Optimal
-          $hash=(Get-FileHash dist/BluetoothPhoneAudio-OneClick-win.zip -Algorithm SHA256).Hash.ToLowerInvariant()
-          "$hash  BluetoothPhoneAudio-OneClick-win.zip" | Set-Content dist/SHA256-Windows.txt
+          New-Item -ItemType Directory -Force dist/win/AudioBridge | Out-Null
+          Copy-Item windows/* dist/win/AudioBridge -Recurse
+          Copy-Item README.zh-CN.md dist/win/AudioBridge/README.md
+          Copy-Item THIRD_PARTY_NOTICES.md dist/win/AudioBridge/
+          Compress-Archive -Path dist/win/AudioBridge -DestinationPath dist/AudioBridge-win.zip -CompressionLevel Optimal
+          $hash=(Get-FileHash dist/AudioBridge-win.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  AudioBridge-win.zip" | Set-Content dist/SHA256-Windows.txt
       - uses: actions/upload-artifact@v4
         with:
           name: windows-package
           path: |
-            dist/BluetoothPhoneAudio-OneClick-win.zip
+            dist/AudioBridge-win.zip
             dist/SHA256-Windows.txt
 
   mac-package:
@@ -38,12 +38,12 @@ jobs:
       - name: Build macOS app
         run: ./macos/build_app.sh
       - name: SHA-256
-        run: shasum -a 256 dist/BluetoothPhoneAudio-OneClick-mac-universal.zip > dist/SHA256-macOS.txt
+        run: shasum -a 256 dist/AudioBridge-mac-universal.zip > dist/SHA256-macOS.txt
       - uses: actions/upload-artifact@v4
         with:
           name: mac-package
           path: |
-            dist/BluetoothPhoneAudio-OneClick-mac-universal.zip
+            dist/AudioBridge-mac-universal.zip
             dist/SHA256-macOS.txt
 
   release:
@@ -57,13 +57,13 @@ jobs:
       - name: Assemble checksums
         run: |
           mkdir -p dist
-          cp artifacts/windows-package/BluetoothPhoneAudio-OneClick-win.zip dist/
-          cp artifacts/mac-package/BluetoothPhoneAudio-OneClick-mac-universal.zip dist/
+          cp artifacts/windows-package/AudioBridge-win.zip dist/
+          cp artifacts/mac-package/AudioBridge-mac-universal.zip dist/
           cat artifacts/windows-package/SHA256-Windows.txt artifacts/mac-package/SHA256-macOS.txt > dist/SHA256SUMS.txt
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/BluetoothPhoneAudio-OneClick-win.zip
-            dist/BluetoothPhoneAudio-OneClick-mac-universal.zip
+            dist/AudioBridge-win.zip
+            dist/AudioBridge-mac-universal.zip
             dist/SHA256SUMS.txt
