@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Continue'
-Write-Host '=== BluetoothPhoneAudio-OneClick diagnostics ===' -ForegroundColor Cyan
+Write-Host '=== AudioBridge diagnostics ===' -ForegroundColor Cyan
 Write-Host "Time: $(Get-Date -Format o)"
 Write-Host "Windows: $([Environment]::OSVersion.VersionString)"
 Write-Host "64-bit OS: $([Environment]::Is64BitOperatingSystem)"
@@ -12,7 +12,7 @@ try {
   Write-Host "Get-PnpDevice failed: $($_.Exception.Message)"
 }
 Write-Host ''
-$runtime = Join-Path $env:LOCALAPPDATA 'BluetoothPhoneAudio-OneClick'
+$runtime = Join-Path $env:LOCALAPPDATA 'AudioBridge'
 Write-Host "Runtime directory: $runtime"
 if (Test-Path $runtime) {
   Get-ChildItem $runtime | Format-Table -AutoSize Name, Length, LastWriteTime
