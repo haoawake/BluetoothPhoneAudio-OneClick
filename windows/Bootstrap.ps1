@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 
-$AppName = 'BluetoothPhoneAudio-OneClick'
+$AppName = 'AudioBridge'
 $Runtime = Join-Path $env:LOCALAPPDATA $AppName
 $Exe = Join-Path $Runtime 'AudioPlaybackConnector.exe'
 $Meta = Join-Path $Runtime 'source.json'
 $Api = 'https://api.github.com/repos/Dearkoma/AudioPlaybackConnector/releases/latest'
 
 function Write-Step([string]$Text) {
-  Write-Host "[Phone Audio] $Text" -ForegroundColor Cyan
+  Write-Host "[AudioBridge] $Text" -ForegroundColor Cyan
 }
 
 function Get-ArchAsset($Release) {
