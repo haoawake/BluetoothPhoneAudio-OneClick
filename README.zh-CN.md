@@ -12,7 +12,7 @@
 ### 使用
 
 1. 在「设置 → 蓝牙和设备」里先把手机与电脑配对。
-2. 双击 `windows/Start.cmd`。
+2. 下载 Release 里的 `AudioBridge-win.zip` 并解压，双击 `AudioBridge/windows/Start.cmd`。
 3. 第一次运行会自动从 `Dearkoma/AudioPlaybackConnector` 的 GitHub Release 下载与系统匹配的组件。
 4. 下载后根据 GitHub Release 提供的 SHA-256 digest 自动校验，校验通过才启动。
 5. 点击 Windows 通知区域里的 AudioPlaybackConnector 图标，选择手机并连接。
@@ -44,7 +44,7 @@ Mac 端不安装第三方音频驱动，直接调用系统 AirPlay Receiver。
 
 ### 使用
 
-1. 双击 Release 里的 `AudioBridge.app`。
+1. 下载并解压 Release 里的 `AudioBridge-mac-universal.zip`，双击其中的 `AudioBridge.app`。
 2. 点「打开 AirPlay 设置」。
 3. 在 Mac 系统设置中打开 **AirPlay Receiver**。
 4. 在 iPhone / iPad 上播放声音，打开控制中心。
